@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Movies.Applications\Movies.Applications.csproj" />
+  </ItemGroup>
+
 </Project>
