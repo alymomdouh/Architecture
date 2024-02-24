@@ -7,7 +7,7 @@ namespace Movies.Infrastructure.Repositories.Base
 {
     public class Repository<T> : IRepository<T> where T : Entity
     {
-        private readonly MovieDbContext _context;
+        protected readonly MovieDbContext _context;
         public Repository(MovieDbContext context)
         {
             _context = context;
