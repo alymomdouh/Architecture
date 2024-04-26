@@ -1,4 +1,7 @@
 
+using Microsoft.EntityFrameworkCore;
+using School.Infrustructure.Context;
+
 namespace School.Api
 {
     public class Program
@@ -14,6 +17,12 @@ namespace School.Api
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
 
+            #region Connection To SQL Server 
+            builder.Services.AddDbContext<ApplicationDBContext>(option =>
+            {
+                option.UseSqlServer(builder.Configuration.GetConnectionString("dbcontext"));
+            });
+            #endregion 
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
