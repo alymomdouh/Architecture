@@ -24,8 +24,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\movies-clean-architecture\Movies.Core\Movies.Core.csproj" />
+    <ProjectReference Include="..\School.Core\School.Core.csproj" />
     <ProjectReference Include="..\School.Infrustructure\School.Infrustructure.csproj" />
+    <ProjectReference Include="..\School.Service\School.Service.csproj" />
   </ItemGroup>
 
 </Project>

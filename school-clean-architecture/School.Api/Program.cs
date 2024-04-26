@@ -1,6 +1,9 @@
 
 using Microsoft.EntityFrameworkCore;
+using School.Infrustructure;
 using School.Infrustructure.Context;
+using School.Service;
+using School.Core;
 
 namespace School.Api
 {
@@ -22,7 +25,16 @@ namespace School.Api
             {
                 option.UseSqlServer(builder.Configuration.GetConnectionString("dbcontext"));
             });
-            #endregion 
+            #endregion
+
+            #region Dependency injections
+
+            builder.Services.AddInfrastructureDependencies()
+                            .AddServiceDependencies()
+                            .AddCoreDependencies()
+                            .AddServiceRegisteration(builder.Configuration);
+            #endregion
+
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
