@@ -4,7 +4,7 @@ using School.Core.Features.Students.Queries.Results;
 
 namespace School.Core.Features.Students.Queries.Models
 {
-    public class GetStudentListQuery : IRequest<Response<List<GetStudentListResponse>>>
+    public record GetStudentListQuery() : IRequest<Response<List<GetStudentListResponse>>>
     {
     }
 }
