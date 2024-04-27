@@ -8,12 +8,12 @@ using School.Core.Filters;
 namespace School.Api.Controllers
 {
     [ApiController]
-    [Authorize(Roles = "Admin,User")]
+   // [Authorize(Roles = "Admin,User")]
     public class StudentController : AppControllerBase
     {
         [HttpGet(Router.StudentRouting.List)]
-        [Authorize(Roles = "User")]
-        [ServiceFilter(typeof(AuthFilter))]
+      //  [Authorize(Roles = "User")]
+       // [ServiceFilter(typeof(AuthFilter))]
         public async Task<IActionResult> GetStudentList()
         {
             var response = await Mediator.Send(new GetStudentListQuery());

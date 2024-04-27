@@ -1,6 +1,7 @@
 
 using Microsoft.AspNetCore.Localization;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
 using School.Core;
 using School.Core.MiddleWare;
@@ -34,6 +35,8 @@ namespace School.Api
 
             #region Dependency injections
 
+            builder.Services.AddHttpContextAccessor();
+            
             builder.Services.AddInfrastructureDependencies()
                             .AddServiceDependencies()
                             .AddCoreDependencies()
